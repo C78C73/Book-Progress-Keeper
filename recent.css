@@ -1,0 +1,262 @@
+/* Recent Books specific styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 4rem;
+}
+
+.home-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary);
+    color: var(--darker);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    z-index: 100;
+    animation: fadeIn 0.5s ease;
+}
+
+.home-button:hover {
+    transform: translateY(-3px) rotate(5deg);
+    background-color: var(--primary-dark);
+    box-shadow: 0 10px 20px rgba(74, 222, 128, 0.2);
+}
+
+.search-bar {
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease both;
+    animation-delay: 0.3s;
+}
+
+.search-input-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+    pointer-events: none;
+}
+
+#search-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray);
+    background-color: var(--gray);
+    color: var(--light);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.2);
+}
+
+.recent-books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    animation: fadeInUp 0.8s ease both;
+    animation-delay: 0.5s;
+}
+
+.book-card {
+    background-color: var(--gray);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease both;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.book-cover {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.book-card:hover .book-cover img {
+    transform: scale(1.05);
+}
+
+.book-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--light);
+    line-height: 1.4;
+}
+
+.book-author {
+    font-size: 0.9rem;
+    color: var(--light);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.book-progress {
+    margin-top: auto;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.progress-label {
+    color: var(--light);
+    opacity: 0.8;
+}
+
+.progress-value {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: var(--darker);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-filled {
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.book-date {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--light);
+    opacity: 0.6;
+    text-align: right;
+}
+
+.empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--gray);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.empty-message i {
+    font-size: 3rem;
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.empty-message p {
+    color: var(--light);
+    opacity: 0.8;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.empty-message .btn-add {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary);
+    color: var(--darker);
+    border-radius: 8px;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.empty-message .btn-add:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(74, 222, 128, 0.2);
+}
+
+/* Animation for card appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .recent-books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .book-cover {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .recent-books-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .book-card {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        height: auto;
+    }
+    
+    .book-cover {
+        height: 100%;
+    }
+    
+    .book-info {
+        padding: 1rem;
+    }
+}

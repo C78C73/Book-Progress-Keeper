@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library | Book Progress Tracker</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="library.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="home-button">
+            <i class="fas fa-home"></i>
+        </a>
+
+        <header>
+            <h1>My Library</h1>
+            <p class="subtitle">All your books organized in one place</p>
+        </header>
+
+        <div class="filter-bar">
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search books...">
+            </div>
+            
+            <div class="filter-options">
+                <select id="filter-progress">
+                    <option value="all">All Books</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                    <option value="not-started">Not Started</option>
+                </select>
+                
+                <select id="sort-books">
+                    <option value="date-newest">Date Added (Newest)</option>
+                    <option value="date-oldest">Date Added (Oldest)</option>
+                    <option value="title-az">Title (A-Z)</option>
+                    <option value="title-za">Title (Z-A)</option>
+                    <option value="progress-high">Progress (High-Low)</option>
+                    <option value="progress-low">Progress (Low-High)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="library-stats">
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-book"></i></div>
+                <div class="stat-value" id="total-books">0</div>
+                <div class="stat-label">Total Books</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-bookmark"></i></div>
+                <div class="stat-value" id="in-progress">0</div>
+                <div class="stat-label">In Progress</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="stat-value" id="completed">0</div>
+                <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                <div class="stat-value" id="not-started">0</div>
+                <div class="stat-label">Not Started</div>
+            </div>
+        </div>
+
+        <div class="library-grid" id="library-container">
+            <!-- Books will be dynamically added here -->
+            <div class="empty-library" id="empty-message">
+                <i class="fas fa-books"></i>
+                <p>Your library is empty. Add some books to get started!</p>
+                <a href="book.html" class="btn-add">Add Your First Book</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="library.js"></script>
+</body>
+</html>

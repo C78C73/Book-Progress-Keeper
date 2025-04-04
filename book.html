@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book | Book Progress Tracker</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="book.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container book-container">
+        <a href="index.html" class="home-button">
+            <i class="fas fa-home"></i>
+        </a>
+
+        <header>
+            <h1>Add New Book</h1>
+            <p class="subtitle">Track your reading journey chapter by chapter</p>
+        </header>
+
+        <div class="book-form">
+            <div class="form-group">
+                <div class="book-preview">
+                    <div class="book-cover-preview">
+                        <i class="fas fa-book"></i>
+                        <p>Book Cover</p>
+                    </div>
+                    <div class="book-info-preview">
+                        <h3 class="preview-title">Book Title</h3>
+                        <p class="preview-author">by Author Name</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Book Details</h2>
+                <div class="form-group">
+                    <label for="book-title-input">Book Title</label>
+                    <input type="text" id="book-title-input" placeholder="Enter book title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="book-author-input">Book Author</label>
+                    <input type="text" id="book-author-input" placeholder="Enter book author" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="book-image-file">Book Cover Image</label>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="book-image-file" accept="image/*" required>
+                        <div class="file-input-button">
+                            <i class="fas fa-upload"></i> Choose Image
+                        </div>
+                        <span class="file-name">No file chosen</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Book Chapters</h2>
+                <p class="info-text">Enter chapters in order</p>
+                
+                <div class="chapter-input-group">
+                    <div class="form-group chapter-input-container">
+                        <input type="text" class="chapter-input" placeholder="Enter chapter name" required>
+                        <button class="btn-remove-chapter">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <button id="add-chapter" class="btn-add-chapter">
+                    <i class="fas fa-plus"></i> Add Another Chapter
+                </button>
+            </div>
+
+            <div class="form-section">
+                <h2>Reading Progress</h2>
+                <div class="progress-chart">
+                    <div class="progress-indicator">
+                        <span class="progress-percentage">0%</span>
+                        <div class="progress-bar">
+                            <div class="progress-filled"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapters-list">
+                        <!-- Chapters will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <div id="loader" class="loader" style="display: none;">
+                    <div class="spinner"></div>
+                    <span>Saving your book...</span>
+                </div>
+                <button id="save-book" class="btn-save">
+                    <i class="fas fa-save"></i> Save Book
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="book.js"></script>
+</body>
+</html>

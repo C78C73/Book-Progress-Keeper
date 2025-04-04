@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Books | Book Progress Tracker</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="recent.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="home-button">
+            <i class="fas fa-home"></i>
+        </a>
+
+        <header>
+            <h1>Recent Books</h1>
+            <p class="subtitle">Your most recently added reading journeys</p>
+        </header>
+
+        <div class="search-bar">
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search for a book...">
+            </div>
+        </div>
+
+        <div class="recent-books-grid" id="recent-books-container">
+            <!-- Books will be dynamically added here -->
+            <div class="empty-message" id="empty-message">
+                <i class="fas fa-book-open"></i>
+                <p>No books added yet. Start your reading journey!</p>
+                <a href="book.html" class="btn-add">Add Your First Book</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="recent.js"></script>
+</body>
+</html>

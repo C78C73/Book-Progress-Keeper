@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Progress Tracker</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Book Progress Tracker</h1>
+            <p class="subtitle">Track your reading journey</p>
+        </header>
+        
+        <div class="action-buttons">
+            <a href="book.html" class="btn-add">
+                <i class="fas fa-plus"></i> Add New Book
+            </a>
+            <a href="library.html" class="btn-view">
+                <i class="fas fa-book-open"></i> View Library
+            </a>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-book"></i></div>
+                <div class="stat-value">0</div>
+                <div class="stat-label">Books Added</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="stat-value">0</div>
+                <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-hourglass-half"></i></div>
+                <div class="stat-value">0</div>
+                <div class="stat-label">In Progress</div>
+            </div>
+        </div>
+        
+        <div class="recent-books">
+            <a href="recent.html" class="btn-view-recent">
+                <h2>Recent Books</h2>
+            </a>
+            <p class="empty-message">No books yet. Add your first book to get started!</p>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

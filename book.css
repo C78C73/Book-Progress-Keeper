@@ -1,0 +1,458 @@
+/* Book page specific styles */
+.book-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 4rem;
+}
+
+.home-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary);
+    color: var(--darker);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    z-index: 100;
+    animation: fadeIn 0.5s ease;
+}
+
+.home-button:hover {
+    transform: translateY(-3px) rotate(5deg);
+    background-color: var(--primary-dark);
+    box-shadow: 0 10px 20px rgba(74, 222, 128, 0.2);
+}
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeInUp 0.8s ease both;
+}
+
+.form-section {
+    background-color: var(--gray);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.8s ease both;
+}
+
+.form-section h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-section h2::before {
+    content: "";
+    width: 4px;
+    height: 20px;
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--light);
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray);
+    background-color: var(--darker);
+    color: var(--light);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.2);
+}
+
+.file-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.file-input-wrapper input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.file-input-button {
+    padding: 0.8rem 1rem;
+    background-color: var(--primary);
+    color: var(--darker);
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.file-name {
+    margin-left: 1rem;
+    color: var(--light);
+    opacity: 0.7;
+}
+
+.file-input-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.book-preview {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--gray);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    animation: fadeInDown 0.8s ease both;
+}
+
+.book-cover-preview {
+    width: 100px;
+    height: 150px;
+    background-color: var(--darker);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.book-cover-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-cover-preview i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.book-info-preview {
+    flex: 1;
+}
+
+.preview-title {
+    font-size: 1.5rem;
+    color: var(--light);
+    margin-bottom: 0.3rem;
+}
+
+.preview-author {
+    color: var(--light);
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.info-text {
+    font-size: 0.9rem;
+    color: var(--light);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.chapter-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.chapter-input-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0;
+    animation: fadeInLeft 0.5s ease both;
+}
+
+.chapter-input {
+    flex: 1;
+}
+
+.btn-remove-chapter {
+    background-color: rgba(255, 100, 100, 0.2);
+    color: #ff6464;
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-remove-chapter:hover {
+    background-color: rgba(255, 100, 100, 0.3);
+    transform: scale(1.1);
+}
+
+.btn-add-chapter {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px dashed var(--primary);
+    padding: 0.8rem;
+    border-radius: 8px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-add-chapter:hover {
+    background-color: rgba(74, 222, 128, 0.1);
+}
+
+.progress-chart {
+    margin-top: 1rem;
+}
+
+.progress-indicator {
+    margin-bottom: 1.5rem;
+}
+
+.progress-percentage {
+    display: block;
+    text-align: right;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: var(--darker);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-filled {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.chapters-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.chapter-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    background-color: var(--darker);
+    border-radius: 8px;
+    animation: fadeInUp 0.5s ease both;
+}
+
+.chapter-checkbox {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.chapter-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--dark);
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.chapter-checkbox:hover input ~ .checkmark {
+    background-color: rgba(74, 222, 128, 0.1);
+}
+
+.chapter-checkbox input:checked ~ .checkmark {
+    background-color: var(--primary);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.chapter-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.chapter-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.chapter-info {
+    flex: 1;
+}
+
+.chapter-name {
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+.chapter-date {
+    font-size: 0.8rem;
+    color: var(--light);
+    opacity: 0.7;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.btn-save {
+    padding: 1rem 2.5rem;
+    background-color: var(--primary);
+    color: var(--darker);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.btn-save:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(74, 222, 128, 0.2);
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: var(--gray);
+    border-radius: 8px;
+    animation: pulse 1.5s infinite;
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(74, 222, 128, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .book-preview {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .book-cover-preview {
+        margin: 0 auto 1rem;
+    }
+}

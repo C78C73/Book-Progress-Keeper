@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #4ade80;
+    --primary-dark: #22c55e;
+    --primary-light: #86efac;
+    --dark: #0f172a;
+    --darker: #020617;
+    --gray: #334155;
+    --light: #f8fafc;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease both;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--primary-light);
+    opacity: 0.8;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease both;
+    animation-delay: 0.2s;
+}
+
+.btn-add, .btn-view {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-add {
+    background-color: var(--primary);
+    color: var(--darker);
+}
+
+.btn-add:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(74, 222, 128, 0.2);
+}
+
+.btn-view {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-view:hover {
+    background-color: rgba(74, 222, 128, 0.1);
+    transform: translateY(-3px);
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background-color: var(--gray);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease both;
+    animation-delay: 0.4s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--light);
+    opacity: 0.7;
+}
+
+.recent-books {
+    background-color: var(--gray);
+    border-radius: 12px;
+    padding: 2rem;
+    animation: fadeInUp 0.8s ease both;
+    animation-delay: 0.6s;
+}
+
+.recent-books h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.empty-message {
+    text-align: center;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-add, .btn-view {
+        width: 100%;
+        justify-content: center;
+    }
+}
